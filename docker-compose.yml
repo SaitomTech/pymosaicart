@@ -1,0 +1,15 @@
+version: "3"
+services:
+  pymosaic:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        WORKDIR: /pymosaic
+    volumes:
+      - .:/pymosaic
+      - ${USERPROFILE-~}/.ssh:/home/developer/.ssh
+    image: pymosaic-image
+    container_name: pymosaic-container
+    tty: true
+    env_file: .env

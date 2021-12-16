@@ -1,0 +1,16 @@
+// ref. https://github.com/Microsoft/vscode-remote-try-python
+// ref. https://code.visualstudio.com/docs/remote/create-dev-container
+
+{
+  "name": "python mosaic-art",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "pymosaic",
+  "workspaceFolder": "/pymosaic",
+  "postCreateCommand": "pip install -r requirements.txt -r requirements-dev.txt",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "developer",
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+  ],
+}
