@@ -1,4 +1,6 @@
+# dev
 test*.ipynb
+*.jpeg
 
 # ref: https://github.com/github/gitignore/blob/master/Python.gitignore
 
