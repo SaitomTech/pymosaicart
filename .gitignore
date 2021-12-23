@@ -1,6 +1,7 @@
 # dev
-test*.ipynb
+*.ipynb
 *.jpeg
+*.png
 .DS_Store
 
 # ref: https://github.com/github/gitignore/blob/master/Python.gitignore
