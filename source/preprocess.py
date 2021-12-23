@@ -6,7 +6,6 @@ from typing import Union, List
 
 import numpy as np
 import skimage.io
-from skimage.io.sift import load_sift
 from tqdm import tqdm
 
 def get_image_paths(dir_path: Union[Path, str]) -> List[Path]:
