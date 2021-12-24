@@ -27,10 +27,14 @@ def resize_image(image: np.ndarray , ratio: float) -> np.ndarray:
     Returns:
         処理後の画像データ 
     """
-    return skimage.transform.resize(image, [image.shape[0] * ratio, image.shape[1] * ratio, 3]) 
+    resize_image = skimage.transform.resize(
+        image, 
+        [image.shape[0] * ratio, image.shape[1] * ratio, 3]
+    )
+    return (resize_image * 255).astype(np.uint8) 
     
 def save_image(image: np.ndarray, output_dir: Union[Path, str], file_name: str) -> None:
-    skimage.io.imsave(image, os.path.join(output_dir, file_name))
+    skimage.io.imsave(os.path.join(output_dir, file_name), image)
 
 def get_args():
     parser = ArgumentParser(description="入出力パス")
