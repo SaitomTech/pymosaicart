@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 
+import skimage.io
 from tqdm import tqdm
 
 from image import Image
@@ -15,8 +16,8 @@ def preprocess():
     args = get_args() 
     image_paths = get_image_paths(args.input_dir)
     for i, path in enumerate(tqdm(image_paths)):
-        image = Image(path)
-        image.resize() 
+        image = Image(skimage.io.imread(path))
+        image.shrink() 
         image.save(args.output_dir, f'image_{i}.jpeg')
     
 if __name__ == "__main__":
